@@ -13,4 +13,9 @@ class Type_SlideController extends Controller
     	$model = $type_slide->model;
     	return $model;
     }
+
+    public function show($id){
+    	$type_slide = Type_slide::findOrFail($id);
+    	return $type_slide;
+    }
 }

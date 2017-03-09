@@ -10,8 +10,18 @@ class ElementController extends Controller
 {
     protected $element;
 
-    public function __construct($id){
+    /*public function __construct($id){
         $this->element = Element::findOrFail($id);
+    }*/
+
+    public function getById($id){
+        $element=Element::findOrFail($id);
+        return $element;
+    }
+
+    public function getTitle(){
+        $path = $element->title_element;
+        return $path;
     }
 
     public function getPath(){
@@ -24,10 +34,16 @@ class ElementController extends Controller
         return $url;
     }
 
-    public function show($id)
+    public function show()
     {
-        $element=Element::find($id);
         return $element;
         //return view('test.show',array('element' => $element));
     }
+
+    /*public function show($id)
+    {
+        $element=Element::findOrFail($id);
+        return $element;
+        //return view('test.show',array('element' => $element));
+    }*/
 }

@@ -11,14 +11,18 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
-    <!-- <link rel="stylesheet" type="text/css" href="fonts/fonts.css"/> -->
 
   </head>
 
   <body id="body">
 
-    <div>
-        <p>path du fichier = {{ $path_file }}</p>
+    <div class="content-container">
+        <img src="pictures/01.jpg" alt="test"/>
+        @foreach ($elements as $element)
+          <p>ceci est l'element : {{ $element->title_element }} dont le path est : {{ $element->path_file }}</p>
+          
+        @endforeach
+
     </div>
 
   </body>

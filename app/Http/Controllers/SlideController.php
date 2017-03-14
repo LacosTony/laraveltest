@@ -37,10 +37,30 @@ class SlideController extends Controller
     }
 
     public function show($id){
-    	/*$slide = DB::table('slides')
+    	$this->slide = Slide::with('elements')->findOrFail($id);
+        $elements = $this->slide->elements;
+
+       /* $params[0][0] = 'title';
+        $params[0][1] = $this->slide->title_slide;
+        $i = 1;
+
+        foreach ($elements as $element){
+            $params[$i][0] = 'element_'.$i;
+            $params[$i][1] = $element;
+            $i = $i+1;
+        }
+
+        return $params[1][1]->path_file;*/
+        return view('test',
+            [
+                'title'=>$this->slide->title_slide,
+                'elements'=>$this->slide->elements
+
+            ]);
+        /*$slide = DB::table('slides')
     				->where('id_slide',$id);
     	*/
-    	$slide=Slide::find($id);
-    	return $slide;
+    	//$slide=Slide::find($id);
+    	//return $slide;
     }
 }

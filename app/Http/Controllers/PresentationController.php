@@ -20,4 +20,6 @@ class PresentationController extends Controller
     public function getListSlide(){
     	
     }
+
+    
 }

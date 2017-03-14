@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>test</title>
+    <title>{{ $title }}</title>
     <meta name="viewport" content="initial-scale=1.0,width=device-width">
 
     <meta name="description" content="" />
@@ -18,7 +18,7 @@
   <body id="body">
 
     <div>
-        <p>essai</p>
+        <p>path du fichier = {{ $path_file }}</p>
     </div>
 
   </body>

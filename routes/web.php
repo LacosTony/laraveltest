@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 */
 Route::get('/elem/{id}',['uses' => 'ElementController@show']);
-Route::get('/test/{id}', ['uses' => 'SlideController@getById']);
+Route::get('test/{id}', ['uses' => 'ElementController@show']);
 //Route::get('/test/{id}', ['uses' => 'Type_slideController@getModel']);
 
 //Route::resource('element','ElementController');

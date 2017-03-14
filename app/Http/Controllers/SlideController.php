@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Slide;
+use App\Type_slide;
 use App\Element;
 
 class SlideController extends Controller
@@ -16,7 +17,7 @@ class SlideController extends Controller
         $this->slide = Slide::findOrFail($id);
     }*/
 
-    public function getById($id){
+    public function getTheSlideById($id){
         $slide=Slide::with('elements')->findOrFail($id);
         return $slide;
     }
@@ -30,18 +31,9 @@ class SlideController extends Controller
     }
 
     public function getNbElem(){
-        $idType = $slide->type_slide;
-        $element = Element::getById($idType);
-        return $element->model;
+        $model = Type_slide::findOrFail($slide->type_slide)->model;
+        return $model;
 
-    }
-
-    public function create(){
-
-    }
-
-    public function store(){
-    	//$slide = Slide::create([]);
     }
 
     public function show($id){

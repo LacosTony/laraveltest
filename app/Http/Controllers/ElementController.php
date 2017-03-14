@@ -34,9 +34,17 @@ class ElementController extends Controller
         return $url;
     }
 
-    public function show()
+    public function show($id)
     {
-        return $element;
+        $this->element = Element::findOrFail($id);
+        $path_file = $this->element->path_file;
+        $title = $this->element->title_element;
+        return view('test',
+            [
+                'title'=> $title,
+                'path_file' => $path_file
+            ]);
+        //return $element;
         //return view('test.show',array('element' => $element));
     }
 
